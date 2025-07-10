@@ -1,4 +1,3 @@
-````markdown
 # Vibe Coding Challenge — ToDo App на SvelteKit
 
 ## Описание проекта
