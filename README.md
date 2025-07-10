@@ -1,38 +1,105 @@
-# sv
+````markdown
+# Vibe Coding Challenge — ToDo App на SvelteKit
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Описание проекта
 
-## Creating a project
+Простое веб-приложение "Список задач" на SvelteKit с TypeScript и локальным хранилищем IndexedDB через Dexie.  
+Цель — продемонстрировать навыки vibe coding: быстрое прототипирование, типизация, работа с ИИ и удобный UI.
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
+
+## Функциональность
+
+- Редактирование задач  
+- Удаление задач  
+- Поиск по названию задач  
+- Локальное хранение данных в IndexedDB (через Dexie)  
+- Адаптивный интерфейс для мобильных и десктопных устройств  
+- Простые анимации появления и исчезновения задач  
+
+---
+
+## Технологии
+
+- [SvelteKit](https://kit.svelte.dev/)  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Dexie.js](https://dexie.org/) — удобный IndexedDB wrapper  
+- [Tailwind CSS](https://tailwindcss.com/) — утилитарный CSS-фреймворк  
+- [Vite](https://vitejs.dev/) — сборщик  
+
+---
+
+## Запуск проекта
+
+1. Клонируйте репозиторий:  
+```bash
+git clone <url-репозитория>
+````
+
+2. Установите зависимости:
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+3. Запустите дев-сервер:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+4. Откройте в браузере [http://localhost:5173](http://localhost:5173) (или порт, указанный в консоли)
 
-To create a production version of your app:
+---
 
-```bash
-npm run build
-```
+## Структура проекта
 
-You can preview the production build with `npm run preview`.
+* `src/routes` — страницы и основные компоненты
+* `src/lib/db.ts` — конфигурация IndexedDB/Dexie
+* `src/lib/sanitize.ts` — функция очистки данных
+* `src/routes/+page.svelte` — главный UI приложения
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+---
+
+## Промпты ИИ, использованные в проекте
+
+1. Создай форму с обязательным полем `title` и статусом задачи.
+2. Реализуй IndexedDB схему для хранения задач с полями `id`, `title`, `status`, `createdAt`.
+3. Добавь поиск по названию задач с динамическим фильтром.
+4. Сделай редактирование и удаление задач с плавными анимациями.
+5. Обеспечь адаптивный дизайн для мобильных и десктопных устройств с Tailwind CSS.
+
+---
+
+## Время, затраченное на этапы
+
+* Настройка проекта и окружения — 30 мин
+* Реализация IndexedDB и загрузка задач — 45 мин
+* Добавление CRUD функционала — 1 час
+* Поиск и фильтрация — 30 мин
+* Стилизация и адаптивность — 30 мин
+* Документация и финальное тестирование — 15 мин
+
+---
+
+## Основные решения и обоснования
+
+* Использовал Dexie для упрощения работы с IndexedDB, т.к. она сложна напрямую
+* Tailwind CSS выбран для гибкого и быстрого создания адаптивного UI
+* Типизация через TypeScript для безопасности и удобства поддержки кода
+* Простые анимации `fade` из Svelte для плавного UX
+* Поиск реализован фильтрацией в памяти для скорости отклика
+
+---
+
+## Скриншот интерфейса
+
+![Screenshot](./screenshot.png)
+
+---
+
+## Лицензия
+
+MIT
+
+---
